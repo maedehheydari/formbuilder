@@ -58,15 +58,9 @@ class FormController(
 
     // 8. Change the publication status of a form
     // Publish
-    @PostMapping("/{id}/publish")
-    fun publishForm(@PathVariable id: Long): FormDto {
-        return formService.togglePublication(id, true)
-    }
-
-    // Unpublish
-    @PostMapping("/{id}/unpublish")
-    fun unpublishForm(@PathVariable id: Long): FormDto {
-        return formService.togglePublication(id, false)
+    @PostMapping("/{id}/toggle-publication")
+    fun toggleFormPublication(@PathVariable id: Long): FormDto {
+        return formService.togglePublication(id)
     }
 
     // 9. Retrieve a list of published forms

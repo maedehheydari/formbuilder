@@ -72,10 +72,10 @@ class FormService(
         formRepository.delete(form)
     }
 
-    fun togglePublication(id: Long, published: Boolean): FormDto {
+    fun togglePublication(id: Long): FormDto {
         val form = formRepository.findById(id)
             .orElseThrow { ResourceNotFoundException("Form not found with id: $id") }
-        form.published = published
+        form.published = !form.published  // Toggle the current state
         val savedForm = formRepository.save(form)
         return mapToDto(savedForm)
     }
