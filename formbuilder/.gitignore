@@ -25,6 +25,7 @@ bin/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+*.swp
 
 ### NetBeans ###
 /nbproject/private/
@@ -38,3 +39,10 @@ out/
 
 ### Kotlin ###
 .kotlin
+
+# Logs
+*.log
+
+# Operating System Files
+.DS_Store
+Thumbs.db
